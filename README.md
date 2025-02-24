@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Currency Converter Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the **Currency Converter** application. It allows users to convert amounts between currencies in real-time and view a list of all available currencies.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Language**: TypeScript
+- **Framework**: React.js
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **State Management**: Redux Toolkit
+- **API Client**: Axios
+- **Routing**: React Router
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Display a list of default currencies (USD, EUR, RUB, BYN).
+- Add any currencies from the list.
+- Convert amounts between currencies in real-time.
+- View a list of all currencies with their exchange rates.
+- Sort currencies by code or rate.
 
-- Configure the top-level `parserOptions` property like this:
+## Running the Frontend
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Node.js**: Ensure you have Node.js installed (v16 or higher).
+2. **Backend**: Ensure the backend server is running.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/currency-converter-frontend.git
+   cd currency-converter-frontend
+   ```
+2. **Install dependencies**: npm install
+3. **Start the development server**: npm run dev
+4. **Create .env in the root directory with the following variable**:
+   VITE_API_URL="Replace with your backend URL"
+
+## Live Demo
+
+1. **Frontend**: https://currency-converter-frontend-three.vercel.app
+
+![home page](image.png)
+![currencies page](image-1.png)
